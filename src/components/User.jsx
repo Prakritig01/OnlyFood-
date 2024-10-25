@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 const User = () => {
-  const [count] = useState(0);
+  const [count,setCount] = useState(0);
   
   return (
     <div className='userCard'>
@@ -11,6 +11,7 @@ const User = () => {
       <h3>Location : Moradabad</h3>
       <h3>Contact : @Prakriti</h3>
       <h1>this is working fine</h1>
+      <button onClick={()=> setCount(count+1)}>change count</button>
     </div>
   )
 }
