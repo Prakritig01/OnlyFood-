@@ -1,0 +1,229 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+.logo{
+    width: 100px;
+}
+.title{
+    position: relative;
+    right: 18vw;;
+    top: 8px;
+    cursor: pointer;
+}
+.nav-items{
+    padding: 0px 20px;
+
+}
+.nav-items ul{
+    font-size: 18px;
+    display: flex;
+    
+    list-style-type: none;
+}
+
+.nav-items li{
+    padding: 10px;
+    margin: 10px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr)); /* Ensures 4 items per row */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px; /* Limit container width for better layout */
+    margin: 0 auto; /* Center the grid */
+
+}
+
+.res-card {
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    background-color: #ffffff;
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e0e0e0;
+    height: 320px; /* Fixed height for all cards */
+    text-decoration: none;
+}
+a{
+    text-decoration: none;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-4px); /* Lift effect */
+}
+
+.res-logo {
+    width: 100%;
+    height: 150px; /* Fixed height for uniform images */
+    border-radius: 8px;
+    object-fit: cover; /* Maintain image aspect ratio while covering */
+}
+
+.res-card h3 {
+    font-size: 16px;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+    /* text-align: center; */
+    
+    
+}
+
+.res-card p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 13px;
+    /* text-align: center; */
+}
+
+.res-card p:last-child {
+    font-weight: bold;
+    color: #333;
+}
+
+
+.filter-button {
+    background-color:  #b3b5b8; /* Professional blue */
+    color: black; /* White text for contrast */
+    border: none; /* No border */
+    padding: 10px 10px; /* Comfortable size */
+    font-size: 16px; /* Readable font size */
+    border-radius: 5px; /* Slightly rounded corners */
+    cursor: pointer; /* Pointer on hover */
+    margin-right: 35px;
+}
+.filter-button:hover {
+    background-color: #f0f0f0; /* Darker blue on hover */
+}
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.shimmer-card{
+    width: 200px;
+    height: 300px;
+    background-color: #f0f0f0;
+    margin: 20px;
+}
+
+.login-btn{
+    height: 40px;
+    width: 60px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.row1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-bar-input{
+    margin-left: 35px;;
+}
+.search-btn{
+    margin: 10px;
+}
+
+
+
+/* menu card css */
+/* Main container for the restaurant menu */
+.menu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Restaurant name and info styling */
+.restaurant-name {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.restaurant-info {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.avg-rating {
+    font-size: 16px;
+    color: #4caf50; /* Green for average rating */
+    margin-bottom: 20px;
+}
+
+.menu-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Styling for the menu list */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Individual menu item styling */
+.menu-item {
+    display: flex; /* Flexbox for horizontal layout */
+    align-items: center; /* Align items vertically centered */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between menu items */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.menu-item:hover {
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling */
+.dish-image {
+    width: 80px; /* Fixed width for the image */
+    height: 80px; /* Fixed height for the image */
+    border-radius: 5px; /* Slightly rounded corners */
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+    margin-right: 15px; /* Space between image and text */
+}
+
+/* Item details styling */
+.item-details {
+    flex: 1; /* Allow text to take up remaining space */
+}
+
+.item-name {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
+
+.item-price {
+    display: block;
+    font-size: 14px;
+    color: #777; /* Light color for price */
+    margin-top: 5px;
+}
