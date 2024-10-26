@@ -1,28 +1,45 @@
 import React from "react";
 class UserClass extends React.Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
 
     this.state = {
-      count: 0,
+      
+      userInfo :{
+        name : "Dummy Name",
+        location : "Default",
+        id : 12345,
+      },
     };
-    console.log("Props", props);
+    // console.log("Props", props);
+    console.log("constructor called");
+  }
+
+  async componentDidMount(){
+    // console.log("child component did mount");
+    const data = await fetch("https://api.github.com/users/Prakritig01");
+
+    const json = await data.json();
+    console.log(json);
+
+    this.setState({
+        userInfo : json,
+    })
   }
   render() {
-    const { name, location } = this.props;
-    const { count } = this.state;
+    // const { name, location } = this.props;
+   
+    console.log("rendered call");
 
     return (
       <>
         <div className="userCard">
-          <h1>count:{count}</h1>
-          <h3>Name : {name}</h3>
-          <h3>Location : {location}</h3>
+          
+          <h3>Name : {this.state.userInfo.login}</h3>
+          <h3>ID : {this.state.userInfo.id}</h3>
           <h3>Contact : @Prakriti</h3>
           <h3>this is working fine</h3>
-          <button onClick={() => this.setState({
-            count : this.state.count + 1,
-          })}>change count</button>
+         
         </div>
       </>
     );

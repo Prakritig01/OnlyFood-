@@ -5,6 +5,7 @@ const User = () => {
   
   return (
     <div className='userCard'>
+      {console.log("function component")}
       <h1>count:{count}</h1>
       
       <h3>Name : Prakriti</h3>
