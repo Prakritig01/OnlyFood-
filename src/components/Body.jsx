@@ -2,11 +2,12 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Body = () => {
   const [newList, setNewList] = useState([]);
   const [filteredList,setFilterList] = useState([]);
   const [searchItem,setSearchItem] = useState("");
-  // console.log("newList :" , newList);
+  
 
   useEffect(() => {
     fetchData();
@@ -18,28 +19,26 @@ const Body = () => {
       const data = await fetch(
         "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.8268625&lng=78.77524760000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
-      // console.log("type of data",typeof data);
-      // console.log("data",data);
+      
 
       const json = await data.json();
-      // console.log("type of json ",typeof json);
-      // console.log("json", json);
-      // console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      const dataCVal = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-      // console.log("dataCVal", dataCVal)
+      const dataCVal = json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants;     
       setNewList(dataCVal)
       setFilterList(dataCVal);
-      // console.log("newList", newList);
+     
     };
 
   const handleClick = () =>{
-    // console.log("inside this function");
     let searchList = newList.filter((res) => res.info.name.toLowerCase().includes( searchItem.toLowerCase()));
     setFilterList(searchList);
-    // console.log("new list after search" ,searchList);
-    
   }
 
+
+
+  const onlineStatus = useOnlineStatus();
+  if (onlineStatus === false){
+    return <h1>looks like you are offline check your internet connection. </h1>
+  }
   //conditional rendering
   if (newList.length === 0) {
     return <Shimmer />;
