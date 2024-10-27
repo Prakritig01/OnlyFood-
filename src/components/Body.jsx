@@ -16,7 +16,7 @@ const Body = () => {
 
     const fetchData = async () => {
       const data = await fetch(
-        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.86567087793404&lng=78.75919438013031&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+        "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.8268625&lng=78.77524760000001&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       );
       // console.log("type of data",typeof data);
       // console.log("data",data);
